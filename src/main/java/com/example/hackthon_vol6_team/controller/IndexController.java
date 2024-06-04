@@ -13,8 +13,18 @@ public class IndexController {
         return "home";
     }
     @PostMapping("/display")
-    public String login() {
+    public String display() {
 
         return "display";
+    }
+    @GetMapping("/about")
+    public String login() {
+
+        return "about";
+    }
+    @GetMapping("/contact")
+    public String contact() {
+
+        return "contact";
     }
 }
