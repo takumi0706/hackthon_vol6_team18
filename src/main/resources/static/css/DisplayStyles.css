@@ -4,38 +4,70 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
-
+/*透明度のあるかっこいい感じのヘッター*/
 header {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 1em 0;
-    border-bottom: 5px solid #388E3C;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
 }
 
-header nav ul {
-    list-style-type: none;
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
+    gap: 10px;
     justify-content: center;
 }
 
-header nav ul li {
-    margin: 0 1em;
-}
-
-header nav ul li a {
-    color: #fff;
+nav a {
+    color: white;
     text-decoration: none;
-    font-weight: bold;
-    padding: 0.5em 1em;
-    border-radius: 20px;
-    transition: background-color 0.3s;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.3);
 }
 
-header nav ul li a:hover {
-    background-color: #388E3C;
+nav a:hover {
+    background: rgba(0, 0, 0, 0.5);
 }
+
+/*以下のヘッターは緑のかわいい感じ*/
+/*header {*/
+/*    background-color: #4CAF50;*/
+/*    color: #fff;*/
+/*    padding: 1em 0;*/
+/*    border-bottom: 5px solid #388E3C;*/
+/*}*/
+
+/*header nav ul {*/
+/*    list-style-type: none;*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
+
+/*header nav ul li {*/
+/*    margin: 0 1em;*/
+/*}*/
+
+/*header nav ul li a {*/
+/*    color: #fff;*/
+/*    text-decoration: none;*/
+/*    font-weight: bold;*/
+/*    padding: 0.5em 1em;*/
+/*    border-radius: 20px;*/
+/*    transition: background-color 0.3s;*/
+/*}*/
+
+/*header nav ul li a:hover {*/
+/*    background-color: #388E3C;*/
+/*}*/
 
 main {
     padding: 2em;

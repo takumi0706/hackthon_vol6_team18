@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>旅行プランナー</title>
+  <title>Travel Planer</title>
   <link rel="stylesheet" th:href="@{/css/HomeStyles.css}">
 </head>
 <body>
@@ -11,9 +11,9 @@
     <header>
         <nav>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/about}">About</a></li>
+            <li><a th:href="@{/contact}">Contact</a></li>
         </ul>
         </nav>
     </header>
@@ -32,6 +32,5 @@
       </form>
   </main>
 </div>
-
 </body>
 </html>
