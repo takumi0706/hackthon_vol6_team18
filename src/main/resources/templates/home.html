@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>旅行プランナー</title>
+  <link rel="stylesheet" th:href="@{/css/HomeStyles.css}">
+</head>
+<body>
+<div class="container">
+    <header>
+        <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        </nav>
+    </header>
+  <main>
+      <form th:action="@{/display}" method="post">
+    <div class="hero">
+      <h2>旅行先を見つけよう</h2>
+      <form th:action="@{/plan}" method="post">
+          <label>
+              <input type="text" placeholder="場所名を入力" name="location">
+          </label>
+          <button type="submit">Plan</button>
+      </form>
+    </div>
+    <div id="map"></div>
+      </form>
+  </main>
+</div>
+
+</body>
+</html>

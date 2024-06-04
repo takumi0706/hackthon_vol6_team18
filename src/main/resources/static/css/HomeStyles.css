@@ -1,0 +1,93 @@
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-image: url(../img/istockphoto-1337232523-1024x1024.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: white;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+nav a:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    width: 300px;
+}
+
+.hero button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 3px;
+    background: #00aaff;
+    color: white;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background: #0088cc;
+}
+
+#map {
+    height: 50%;
+}
