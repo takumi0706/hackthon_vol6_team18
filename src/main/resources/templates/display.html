@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Planing</title>
+    <link rel="stylesheet" th:href="@{/css/DisplayStyles.css}">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/about}">About</a></li>
+            <li><a th:href="@{/contact}">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h1>旅行プランナー</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/food}">食事</a></li>
+            <li><a th:href="@{/accommodation}">宿泊</a></li>
+            <li><a th:href="@{/sightseeing}">観光スポット</a></li>
+            <li><a th:href="@{/schedule}">日程調整</a></li>
+            <li><a th:href="@{/culture}">文化・習慣</a></li>
+            <li><a th:href="@{/weather}">天気情報</a></li>
+            <li><a th:href="@{/budget}">予算管理</a></li>
+            <li><a th:href="@{/localinfo}">地域情報</a></li>
+        </ul>
+    </nav>
+</main>
+</body>
+</html>
