@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Travel Planer</title>
   <link rel="stylesheet" th:href="@{/css/HomeStyles.css}">
+
+    <script>
+        function showError(message) {
+            alert(message);
+        }
+    </script>
 </head>
 <body>
 <div class="container">
@@ -32,5 +38,10 @@
       </form>
   </main>
 </div>
+
+<!-- エラーメッセージがある場合にポップアップ表示 -->
+<script th:if="${error}" th:inline="javascript">
+    showError([[${error}]]);
+</script>
 </body>
 </html>
