@@ -1,10 +1,20 @@
-body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+body{
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-image: url(../img/istockphoto-1337232523-1024x1024.jpg);
+    background-size: cover;
+    background-position: center;
 }
-/*透明度のあるかっこいい感じのヘッター*/
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    color: white;
+}
+
 header {
     background: rgba(0, 0, 0, 0.5);
     padding: 10px 20px;
@@ -35,39 +45,6 @@ nav a {
 nav a:hover {
     background: rgba(0, 0, 0, 0.5);
 }
-
-/*以下のヘッターは緑のかわいい感じ*/
-/*header {*/
-/*    background-color: #4CAF50;*/
-/*    color: #fff;*/
-/*    padding: 1em 0;*/
-/*    border-bottom: 5px solid #388E3C;*/
-/*}*/
-
-/*header nav ul {*/
-/*    list-style-type: none;*/
-/*    padding: 0;*/
-/*    margin: 0;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*}*/
-
-/*header nav ul li {*/
-/*    margin: 0 1em;*/
-/*}*/
-
-/*header nav ul li a {*/
-/*    color: #fff;*/
-/*    text-decoration: none;*/
-/*    font-weight: bold;*/
-/*    padding: 0.5em 1em;*/
-/*    border-radius: 20px;*/
-/*    transition: background-color 0.3s;*/
-/*}*/
-
-/*header nav ul li a:hover {*/
-/*    background-color: #388E3C;*/
-/*}*/
 
 main {
     padding: 2em;
