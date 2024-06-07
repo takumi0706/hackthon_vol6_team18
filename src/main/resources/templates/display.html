@@ -18,6 +18,7 @@
 <main>
     <h1>旅行プランナー</h1>
     <p th:text="'選択した場所: ' + ${location}"></p>
+    <p th:text="${response}"></p>
     <nav>
         <ul>
             <li><a th:href="@{/food}">食事</a></li>
