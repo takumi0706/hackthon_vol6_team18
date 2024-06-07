@@ -1,5 +1,6 @@
 package com.example.hackthon_vol6_team.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,9 @@ import com.example.hackthon_vol6_team.service.ChatGptService;
 
 @Controller
 public class IndexController {
+
+    @Autowired
+    private ChatGptService chatGptService;
 
     @GetMapping("/")
     public String home() {
@@ -23,22 +27,30 @@ public class IndexController {
             model.addAttribute("error", "場所名を入力してください。");
             return "home";
         }else {
-            ChatGptService chatGptService = new ChatGptService();
-            String prompt = """
-            あなたは旅行プランナーアシスタントです。ユーザーの質問に対して、以下の形式で回答してください。
-            
-            - 目的地:
-            - 推奨アクティビティ:
-            - 最適な旅行時期:
-            - 注意事項:
-            """;
-            String response = chatGptService.getChatGptResponse(prompt + location);
             model.addAttribute("location", location);
-            model.addAttribute("response", response);
+//            TODO: APIを渡してない時の処理を導入するべきかな？
             return "display";
         }
 
     }
+
+    @PostMapping("/display/food")
+    public String food(@RequestParam("location") String location, Model model) {
+
+        String prompt = """
+                あなたは食事プランナーアシスタントです。ユーザーの質問に対して、以下の形式で回答してください。
+               
+                - 目的地:
+                - おすすめの食事:
+                - おすすめのレストラン:
+                """;
+        String response = chatGptService.getChatGptResponse(prompt + location);
+        model.addAttribute("location", location);
+        model.addAttribute("response", response);
+
+        return "food";
+    }
+
     @GetMapping("/about")
     public String login() {
 

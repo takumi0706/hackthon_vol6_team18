@@ -1,4 +1,5 @@
-body{
+
+body {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -48,7 +49,7 @@ nav a:hover {
 
 main {
     padding: 2em;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
     margin: 2em auto;
     max-width: 800px;
     border-radius: 15px;
@@ -57,6 +58,10 @@ main {
 
 main h1 {
     text-align: center;
+    color: #333;
+}
+
+main p {
     color: #333;
 }
 
@@ -72,18 +77,25 @@ main nav ul li {
     width: calc(50% - 1em);
 }
 
-main nav ul li a {
-    display: block;
+main nav ul li form {
+    display: flex;
+    justify-content: center;
+}
+
+main nav ul li form button {
+    width: 100%;
     padding: 1em;
     background-color: #4CAF50;
     color: #fff;
     text-align: center;
     text-decoration: none;
+    border: none;
     border-radius: 15px;
     transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
 }
 
-main nav ul li a:hover {
+main nav ul li form button:hover {
     background-color: #388E3C;
     transform: scale(1.05);
 }

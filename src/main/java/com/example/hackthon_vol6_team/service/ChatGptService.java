@@ -12,6 +12,7 @@ import java.util.Objects;
 
 @Service
 public class ChatGptService {
+//todo: apiとurlをapplication.propertiesに移動したいけど、うまくいかないからコメントアウトしてる
 
 //    @Value("${chatgpt.api.url}")
     private static final String apiUrl = "https://api.openai.com/v1/chat/completions";
