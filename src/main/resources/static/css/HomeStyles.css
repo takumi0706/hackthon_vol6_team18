@@ -1,4 +1,100 @@
-body{
+/*body{*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    height: 100%;*/
+/*    font-family: Arial, sans-serif;*/
+/*    background-image: url(../img/istockphoto-1337232523-1024x1024.jpg);*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*}*/
+
+/*.container {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    height: 100%;*/
+/*    color: white;*/
+/*}*/
+
+/*header {*/
+/*    background: rgba(0, 0, 0, 0.5);*/
+/*    padding: 10px 20px;*/
+/*}*/
+
+/*header h1 {*/
+/*    margin: 0;*/
+/*    font-size: 24px;*/
+/*}*/
+
+/*nav ul {*/
+/*    list-style: none;*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    display: flex;*/
+/*    gap: 10px;*/
+/*    justify-content: center;*/
+/*}*/
+
+/*nav a {*/
+/*    color: white;*/
+/*    text-decoration: none;*/
+/*    padding: 5px 10px;*/
+/*    border-radius: 3px;*/
+/*    background: rgba(0, 0, 0, 0.3);*/
+/*}*/
+
+/*nav a:hover {*/
+/*    background: rgba(0, 0, 0, 0.5);*/
+/*}*/
+
+/*.hero {*/
+/*    flex: 1;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.hero h2 {*/
+/*    font-size: 36px;*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+/*.hero form {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    gap: 10px;*/
+/*}*/
+
+/*.hero input[type="text"] {*/
+/*    padding: 10px;*/
+/*    font-size: 16px;*/
+/*    border: none;*/
+/*    border-radius: 3px;*/
+/*    width: 300px;*/
+/*}*/
+
+/*.hero button {*/
+/*    padding: 10px 20px;*/
+/*    font-size: 16px;*/
+/*    border: none;*/
+/*    border-radius: 3px;*/
+/*    background: #00aaff;*/
+/*    color: white;*/
+/*    cursor: pointer;*/
+/*    margin-top: 20px;*/
+/*}*/
+
+/*.hero button:hover {*/
+/*    background: #0088cc;*/
+/*}*/
+
+/*#map {*/
+/*    height: 50%;*/
+/*}*/
+
+body {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -6,23 +102,36 @@ body{
     background-image: url(../img/istockphoto-1337232523-1024x1024.jpg);
     background-size: cover;
     background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    color: white;
+    width: 80%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    color: #333;
 }
 
 header {
     background: rgba(0, 0, 0, 0.5);
     padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 header h1 {
     margin: 0;
     font-size: 24px;
+    color: #fff;
 }
 
 nav ul {
@@ -40,6 +149,7 @@ nav a {
     padding: 5px 10px;
     border-radius: 3px;
     background: rgba(0, 0, 0, 0.3);
+    transition: background 0.3s;
 }
 
 nav a:hover {
@@ -53,25 +163,30 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .hero h2 {
     font-size: 36px;
     margin-bottom: 20px;
+    color: #333;
 }
 
 .hero form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .hero input[type="text"] {
     padding: 10px;
     font-size: 16px;
-    border: none;
-    border-radius: 3px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     width: 300px;
 }
 
@@ -79,17 +194,29 @@ nav a:hover {
     padding: 10px 20px;
     font-size: 16px;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     background: #00aaff;
     color: white;
     cursor: pointer;
-    margin-top: 20px;
+    transition: background 0.3s, transform 0.3s;
 }
 
 .hero button:hover {
     background: #0088cc;
+    transform: scale(1.05);
 }
 
 #map {
     height: 50%;
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+/* エラーメッセージ表示用 */
+.error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+    display: none;
 }

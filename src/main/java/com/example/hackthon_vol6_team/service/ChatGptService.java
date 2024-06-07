@@ -18,7 +18,7 @@ public class ChatGptService {
     private static final String apiUrl = "https://api.openai.com/v1/chat/completions";
 
 //    @Value("${chatgpt.api.key}")
-    private static final String apiKey = "your-api-key-here";
+    private static final String apiKey = "your_api_key_here";
 
     public String getChatGptResponse(String prompt) {
         RestTemplate restTemplate = new RestTemplate();

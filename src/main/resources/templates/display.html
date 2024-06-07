@@ -23,12 +23,14 @@
             <li>
                 <form th:action="@{/display/food}" method="post">
                     <input type="hidden" name="location" th:value="${location}" />
+                    <input type="hidden" name="food_budget" th:value="${food_budget}" />
                     <button type="submit">食事</button>
                 </form>
             </li>
             <li>
                 <form th:action="@{/display/accommodation}" method="post">
                     <input type="hidden" name="location" th:value="${location}" />
+                    <input type="hidden" name="another_budget" th:value="${another_budget}" />
                     <button type="submit">宿泊</button>
                 </form>
             </li>
@@ -41,6 +43,7 @@
             <li>
                 <form th:action="@{/display/schedule}" method="post">
                     <input type="hidden" name="location" th:value="${location}" />
+                    <input type="hidden" name="days" th:value="${days}" />
                     <button type="submit">日程調整</button>
                 </form>
             </li>
@@ -53,21 +56,11 @@
             <li>
                 <form th:action="@{/display/weather}" method="post">
                     <input type="hidden" name="location" th:value="${location}" />
+                    <input type="hidden" name="days" th:value="${days}" />
                     <button type="submit">天気情報</button>
                 </form>
             </li>
-            <li>
-                <form th:action="@{/display/budget}" method="post">
-                    <input type="hidden" name="location" th:value="${location}" />
-                    <button type="submit">予算管理</button>
-                </form>
-            </li>
-            <li>
-                <form th:action="@{/display/localinfo}" method="post">
-                    <input type="hidden" name="location" th:value="${location}" />
-                    <button type="submit">地域情報</button>
-                </form>
-            </li>
+
         </ul>
     </nav>
 </main>
