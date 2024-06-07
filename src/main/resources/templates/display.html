@@ -18,17 +18,49 @@
 <main>
     <h1>旅行プランナー</h1>
     <p th:text="'選択した場所: ' + ${location}"></p>
-    <p th:text="${response}"></p>
     <nav>
         <ul>
-            <li><a th:href="@{/food}">食事</a></li>
-            <li><a th:href="@{/accommodation}">宿泊</a></li>
-            <li><a th:href="@{/sightseeing}">観光スポット</a></li>
-            <li><a th:href="@{/schedule}">日程調整</a></li>
-            <li><a th:href="@{/culture}">文化・習慣</a></li>
-            <li><a th:href="@{/weather}">天気情報</a></li>
-            <li><a th:href="@{/budget}">予算管理</a></li>
-            <li><a th:href="@{/localinfo}">地域情報</a></li>
+            <li>
+                <form th:action="@{/display/food}" method="post">
+                    <input type="hidden" name="location" th:value="${location}" />
+                    <input type="hidden" name="food_budget" th:value="${food_budget}" />
+                    <button type="submit">食事</button>
+                </form>
+            </li>
+            <li>
+                <form th:action="@{/display/accommodation}" method="post">
+                    <input type="hidden" name="location" th:value="${location}" />
+                    <input type="hidden" name="another_budget" th:value="${another_budget}" />
+                    <button type="submit">宿泊</button>
+                </form>
+            </li>
+            <li>
+                <form th:action="@{/display/sightseeing}" method="post">
+                    <input type="hidden" name="location" th:value="${location}" />
+                    <button type="submit">観光スポット</button>
+                </form>
+            </li>
+            <li>
+                <form th:action="@{/display/schedule}" method="post">
+                    <input type="hidden" name="location" th:value="${location}" />
+                    <input type="hidden" name="days" th:value="${days}" />
+                    <button type="submit">日程調整</button>
+                </form>
+            </li>
+            <li>
+                <form th:action="@{/display/culture}" method="post">
+                    <input type="hidden" name="location" th:value="${location}" />
+                    <button type="submit">文化・習慣</button>
+                </form>
+            </li>
+            <li>
+                <form th:action="@{/display/weather}" method="post">
+                    <input type="hidden" name="location" th:value="${location}" />
+                    <input type="hidden" name="days" th:value="${days}" />
+                    <button type="submit">天気情報</button>
+                </form>
+            </li>
+
         </ul>
     </nav>
 </main>

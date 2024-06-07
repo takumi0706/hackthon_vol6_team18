@@ -12,12 +12,14 @@ import java.util.Objects;
 
 @Service
 public class ChatGptService {
+//todo: apiとurlをapplication.propertiesに移動したいけど、うまくいかないからコメントアウトしてる
 
 //    @Value("${chatgpt.api.url}")
     private static final String apiUrl = "https://api.openai.com/v1/chat/completions";
 
 //    @Value("${chatgpt.api.key}")
-    private static final String apiKey = "your_api_key";
+    private static final String apiKey = "your_api_key_here";
+
 
     public String getChatGptResponse(String prompt) {
         RestTemplate restTemplate = new RestTemplate();
