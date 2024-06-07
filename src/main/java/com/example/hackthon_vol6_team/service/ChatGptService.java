@@ -20,6 +20,7 @@ public class ChatGptService {
 //    @Value("${chatgpt.api.key}")
     private static final String apiKey = "your_api_key_here";
 
+
     public String getChatGptResponse(String prompt) {
         RestTemplate restTemplate = new RestTemplate();
 
