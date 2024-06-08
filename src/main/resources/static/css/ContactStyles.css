@@ -86,13 +86,7 @@ nav a:hover {
 }
 
 
-body {
-    background-image: url('https://user0514.cdnw.net/shared/img/thumb/N468_aozoratokumo_TP_V.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    }
+
 
     h2,h3 {
         padding: 1rem 2rem;
