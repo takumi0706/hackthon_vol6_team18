@@ -4,7 +4,12 @@ import com.example.hackthon_vol6_team.entity.UserInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
+/**
+ * ユーザー情報テーブルDAO
+ *
+ * @author fuj1o
+ *
+ */
 public interface UserInfoRepository extends JpaRepository<UserInfo,String> {
 
 }

@@ -15,7 +15,7 @@ public class IndexController {
     @Autowired
     private ChatGptService chatGptService;
 
-    @GetMapping("/")
+    @PostMapping("/home")
     public String home() {
 
         return "home";
