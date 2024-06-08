@@ -14,10 +14,12 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.removeItem("selectedAddress");
     }
 
-    $('#in').fadeIn(1000);
-    $('#in2').fadeIn(1200);
-    $('#in3').fadeIn(1400);
-    $('#in4').fadeIn(1600);
-    $('#in5').fadeIn(1800);
-    $('#in6').fadeIn(1800);
+    <!-- フェードイン -->
+        $('#in').fadeIn(1000);
+        $('#in2').fadeIn(1200);
+        $('#in3').fadeIn(1400);
+        $('#in4').fadeIn(1600);
+        $('#in5').fadeIn(1800);
+        $('#in6').fadeIn(2100);
+        $('#in7').fadeIn(2100);
 });

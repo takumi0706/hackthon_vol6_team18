@@ -17,7 +17,15 @@ public class IndexController {
 
 
     @PostMapping("/home")
-    public String home(@RequestParam(value = "location", required = false) String location, Model model) {
+    public String HomePost(@RequestParam(value = "location", required = false) String location, Model model) {
+        if (location != null) {
+            model.addAttribute("location", location);
+        }
+        return "home";
+    }
+
+    @GetMapping("/home")
+    public String HomeGet(@RequestParam(value = "location", required = false) String location, Model model) {
         if (location != null) {
             model.addAttribute("location", location);
         }
