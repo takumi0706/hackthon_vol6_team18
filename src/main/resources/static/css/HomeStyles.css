@@ -29,9 +29,10 @@ body {
 
 header {
     background: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
+    padding: 1px 20px;
     border-radius: 10px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 header h1 {
@@ -43,7 +44,7 @@ header h1 {
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 10px;
     display: flex;
     gap: 10px;
     justify-content: center;
@@ -55,7 +56,6 @@ nav a {
     padding: 5px 10px;
     border-radius: 3px;
     background: rgba(0, 0, 0, 0.3);
-    transition: background 0.3s;
 }
 
 nav a:hover {
