@@ -3,6 +3,7 @@ package com.example.hackthon_vol6_team.service;
 import com.example.hackthon_vol6_team.dto.ChatGptRequest;
 import com.example.hackthon_vol6_team.dto.ChatGptResponse;
 import com.example.hackthon_vol6_team.dto.Message;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.*;
@@ -12,13 +13,13 @@ import java.util.Objects;
 
 @Service
 public class ChatGptService {
-//todo: apiとurlをapplication.propertiesに移動したいけど、うまくいかないからコメントアウトしてる
 
-//    @Value("${chatgpt.api.url}")
-    private static final String apiUrl = "https://api.openai.com/v1/chat/completions";
+//propertiesから値を取得
+    @Value("${chatgpt.api.url}")
+    private String apiUrl;
 
-//    @Value("${chatgpt.api.key}")
-    private static final String apiKey = "your_api_key_here";
+    @Value("${chatgpt.api.key}")
+    private String apiKey;
 
 
     public String getChatGptResponse(String prompt) {
