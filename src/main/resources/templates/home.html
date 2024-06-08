@@ -28,10 +28,10 @@
             <h2>旅行先を見つけよう</h2>
             <form th:action="@{/display}" method="post">
                 <label>
-                    <input type="text" placeholder="場所名を入力" name="location">
+                    <input type="text" placeholder="場所名を入力" name="location" required>
                 </label>
                 <label>
-                    <input type="text" placeholder="いつどれくらい行きたい？" name="days">
+                    <input type="text" placeholder="いつどれくらい行きたい？" name="longDays">
                 </label>
                 <label>
                     <input type="text" placeholder="食事の予算" name="food_budget">
