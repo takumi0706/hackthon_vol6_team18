@@ -84,3 +84,73 @@ nav a:hover {
 .contact a:hover {
     text-decoration: underline;
 }
+
+
+
+body {
+    background-image: url('https://user0514.cdnw.net/shared/img/thumb/N468_aozoratokumo_TP_V.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    }
+
+    h2,h3 {
+        padding: 1rem 2rem;
+        border-left: 4px solid #000;
+    }
+
+    #in {
+    display: none;
+    }
+    
+    <!--お問い合わせフォーム-->
+    .contact{
+        width: 960px;
+        margin: 0 auto;
+        padding: 60px 0;
+    }
+
+    .form-table {
+        width: 70%;
+        margin-bottom: 20px;
+    }
+
+    .form-item,
+    .form-body {
+        padding: 20px;
+        border: 1px solid #ccc;
+    }
+
+    .form-item {
+        text-align: left;
+        width: 40%;
+        background-color: aliceblue;
+    }
+
+    .form-body {
+        width: 60%;
+    }
+
+    .form-text {
+        width: 90%;
+        padding: 10px;
+        height: 3px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        max-width: 400px;
+    }
+
+    .form-textarea {
+        width: 90%;
+        padding: 10px;
+        height: 90px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
