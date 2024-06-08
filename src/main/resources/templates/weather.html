@@ -23,7 +23,10 @@
             <div class="border"><h1>天気情報</h1></div>
         </div>
         まだできてないよーん＾＾
-
+        <form th:action="@{/display}" method="post">
+            <input type="hidden" name="location" th:value="${location}">
+            <button type="submit">戻る</button>
+        </form>
     </main>
 </div>
 

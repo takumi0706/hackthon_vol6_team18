@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Maps API Example</title>
+  <script th:inline="javascript">
+
+    let googleMapsApiKey = /*[[${googleMapsApiKey}]]*/"googleMapsApiKey";
+
+  </script>
+  <script th:src="@{'https://maps.googleapis.com/maps/api/js?key=' + ${googleMapsApiKey} + '&callback=initMap'}" async defer></script>
+  <script th:inline="javascript">
+    let map;
+
+    function initMap() {
+      console.log("Initializing map...");
+      const mapOptions = {
+        center: new google.maps.LatLng(35.6895, 139.6917), // 東京の緯度と経度
+        zoom: 8
+      };
+
+      map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+      map.addListener('click', function(event) {
+        const latLng = event.latLng;
+        const lat = latLng.lat();
+        const lng = latLng.lng();
+
+        fetch(`/geocode?lat=${lat}&lng=${lng}`)
+                .then(response => response.json())
+                .then(data => {
+                  const address = data.address;
+                  const input = document.createElement("input");
+                  input.setAttribute("type", "hidden");
+                  input.setAttribute("name", "location");
+                  input.setAttribute("value", address);
+
+                  const form = document.createElement("form");
+                  form.setAttribute("method", "get");
+                  form.setAttribute("action", "/");
+                  form.appendChild(input);
+                  document.body.appendChild(form);
+                  form.submit();
+                })
+                .catch(error => {
+                  console.error('Fetch error:', error);
+                });
+      });
+    }
+  </script>
+</head>
+<body>
+<div id="map" style="width: 100%; height: 500px;"></div>
+</body>
+</html>
+
