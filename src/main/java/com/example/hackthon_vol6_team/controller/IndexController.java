@@ -4,12 +4,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.Map;
 
 
 @Controller
 @SessionAttributes("prompts")
 public class IndexController {
+
+    @ModelAttribute("prompts")
+    public Map<String, String> prompts() {
+        return new HashMap<>();
+    }
 
     @PostMapping("/home")
     public String HomePost(@RequestParam(value = "location", required = false) String location, @ModelAttribute("prompts") Map<String, String> prompts, Model model) {

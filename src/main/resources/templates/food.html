@@ -25,7 +25,8 @@
         
         <p th:text="'選択した場所: ' + ${location}"></p>
         <p th:text="'予算: ' + ${food_budget}"></p>
-        <p th:text="${response}"></p>
+        <p th:text="${response1}"></p>
+        <p th:text="${response2}"></p>
 
         <form th:action="@{/display}" method="post">
             <input type="hidden" name="location" th:value="${location}">
