@@ -6,6 +6,8 @@
     <title>Travel Planner</title>
     <link rel="stylesheet" th:href="@{/css/HomeStyles.css}">
 
+    <link rel="icon" type="image/png" th:href="@{/img/DALLC2B7E202024-06-082019.png}">
+
     <script>
         function showError(message) {
             alert(message);
@@ -29,6 +31,7 @@
         <div class="hero">
             <h2 id="in">旅行先を見つけよう</h2>
             <form th:action="@{/display}" method="post">
+
                 
                 <div id="in2">
                     <label>
@@ -57,14 +60,12 @@
                 <div id="in6">
                     <button type="submit">Plan</button>
                 </div>
-
             </form>
+            <button onclick="window.location.href='/map'">地図で選ぶ</button>
         </div>
-        <div id="map"></div>
     </main>
 </div>
 
-<!-- エラーメッセージがある場合にポップアップ表示 -->
 <script th:if="${error}" th:inline="javascript">
     showError([[${error}]]);
 </script>

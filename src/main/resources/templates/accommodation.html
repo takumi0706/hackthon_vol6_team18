@@ -22,6 +22,10 @@
         <h1>宿泊</h1>
         <p th:text="'選択した場所: ' + ${location}"></p>
         <p th:text="${response}"></p>
+        <form th:action="@{/display}" method="post">
+            <input type="hidden" name="location" th:value="${location}">
+            <button type="submit">戻る</button>
+        </form>
     </main>
 </div>
 </body>
