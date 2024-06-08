@@ -4,8 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Google Maps API Example</title>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdJL2sbsI1J7lU-I7-UEsWARqpRAeRtnA&callback=initMap" async defer></script>
-  <script>
+  <script th:inline="javascript">
+
+    let googleMapsApiKey = /*[[${googleMapsApiKey}]]*/"googleMapsApiKey";
+
+  </script>
+  <script th:src="@{'https://maps.googleapis.com/maps/api/js?key=' + ${googleMapsApiKey} + '&callback=initMap'}" async defer></script>
+  <script th:inline="javascript">
     let map;
 
     function initMap() {
@@ -49,3 +54,4 @@
 <div id="map" style="width: 100%; height: 500px;"></div>
 </body>
 </html>
+
