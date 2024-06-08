@@ -12,6 +12,7 @@
         }
     </script>
 </head>
+
 <body>
 <div class="container">
     <header>
@@ -23,23 +24,40 @@
             </ul>
         </nav>
     </header>
+    
     <main>
         <div class="hero">
-            <h2>旅行先を見つけよう</h2>
+            <h2 id="in">旅行先を見つけよう</h2>
             <form th:action="@{/display}" method="post">
-                <label>
-                    <input type="text" placeholder="場所名を入力" name="location" required>
-                </label>
-                <label>
-                    <input type="text" placeholder="いつどれくらい行きたい？" name="longDays">
-                </label>
-                <label>
-                    <input type="text" placeholder="食事の予算" name="food_budget">
-                </label>
-                <label>
-                    <input type="text" placeholder="その他の予算" name="another_budget">
-                </label>
-                <button type="submit">Plan</button>
+                
+                <div id="in2">
+                    <label>
+                        <input type="text" placeholder="場所名を入力" name="location">
+                    </label>
+                </div>
+
+                <div id="in3">
+                    <label>
+                        <input type="text" placeholder="いつどれくらい行きたい？" name="days">
+                    </label>
+                </div>
+
+                <div id="in4">
+                    <label>
+                        <input type="text" placeholder="食事の予算" name="food_budget">
+                    </label>
+                </div>
+
+                <div id="in5">
+                    <label>
+                        <input type="text" placeholder="その他の予算" name="another_budget">
+                    </label>
+                </div>
+
+                <div id="in6">
+                    <button type="submit">Plan</button>
+                </div>
+
             </form>
         </div>
         <div id="map"></div>
@@ -50,5 +68,16 @@
 <script th:if="${error}" th:inline="javascript">
     showError([[${error}]]);
 </script>
+
+<!-- フェードイン -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+	    $('#in').fadeIn(1000);
+        $('#in2').fadeIn(1200);
+        $('#in3').fadeIn(1400);
+        $('#in4').fadeIn(1600);
+        $('#in5').fadeIn(1800);
+        $('#in6').fadeIn(1800);
+	</script>
 </body>
 </html>
