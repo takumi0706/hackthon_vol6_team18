@@ -16,11 +16,12 @@ public class IndexController {
     private ChatGptService chatGptService;
 
     @GetMapping("/")
-    public String home() {
-
+    public String home(@RequestParam(value = "location", required = false) String location, Model model) {
+        if (location != null) {
+            model.addAttribute("location", location);
+        }
         return "home";
     }
-
 
 //            TODO:日程調整も追加したい。
 
