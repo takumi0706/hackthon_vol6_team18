@@ -2,15 +2,14 @@ package com.example.hackthon_vol6_team.controller;
 
 import com.example.hackthon_vol6_team.service.GeocodingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.view.RedirectView;
 
 import java.io.IOException;
-import java.net.URLEncoder;
-import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,8 +19,12 @@ public class MapController {
     @Autowired
     private GeocodingService geocodingService;
 
+    @Value("${google.maps.api.key}")
+    private String googleMapsApiKey;
+
     @GetMapping("/map")
-    public String map() {
+    public String map(Model model) {
+        model.addAttribute("googleMapsApiKey", googleMapsApiKey);
         return "map";
     }
 
