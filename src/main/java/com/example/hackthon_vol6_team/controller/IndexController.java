@@ -15,7 +15,8 @@ public class IndexController {
     @Autowired
     private ChatGptService chatGptService;
 
-    @GetMapping("/")
+
+    @PostMapping("/home")
     public String home(@RequestParam(value = "location", required = false) String location, Model model) {
         if (location != null) {
             model.addAttribute("location", location);

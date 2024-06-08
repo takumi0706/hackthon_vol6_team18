@@ -6,6 +6,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
+/**
+ * ユーザ情報テーブル Entity
+ *
+ * @author fuj1o
+ *
+ */
+
 @Entity
 @Table(name = "user_info")
 @Data
