@@ -6,6 +6,8 @@
     <title>Travel Planner</title>
     <link rel="stylesheet" th:href="@{/css/HomeStyles.css}">
 
+    <link rel="icon" type="image/png" th:href="@{/img/DALLC2B7E202024-06-082019.png}">
+
     <script>
         function showError(message) {
             alert(message);
@@ -28,7 +30,7 @@
             <h2>旅行先を見つけよう</h2>
             <form th:action="@{/display}" method="post">
                 <label>
-                    <input type="text" placeholder="場所名を入力" name="location" required>
+                    <input type="text" id="location" placeholder="場所名を入力" name="location" required th:value="${location}">
                 </label>
                 <label>
                     <input type="text" placeholder="いつどれくらい行きたい？" name="longDays">
@@ -41,12 +43,11 @@
                 </label>
                 <button type="submit">Plan</button>
             </form>
+            <button onclick="window.location.href='/map'">地図で選ぶ</button>
         </div>
-        <div id="map"></div>
     </main>
 </div>
 
-<!-- エラーメッセージがある場合にポップアップ表示 -->
 <script th:if="${error}" th:inline="javascript">
     showError([[${error}]]);
 </script>

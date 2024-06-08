@@ -16,11 +16,12 @@ public class IndexController {
     private ChatGptService chatGptService;
 
     @GetMapping("/")
-    public String home() {
-
+    public String home(@RequestParam(value = "location", required = false) String location, Model model) {
+        if (location != null) {
+            model.addAttribute("location", location);
+        }
         return "home";
     }
-
 
 //            TODO:日程調整も追加したい。
 
@@ -45,7 +46,8 @@ public class IndexController {
 
         String prompt = """
                 あなたは食事プランナーアシスタントです。ユーザーの質問に対して、以下の形式で回答してください。(とりあえず何かしらの具体的な食事とレストランを予算に合わせて出力してください。レストランの場合は、そのレストランの名前と場所を出力してください。)
-           
+                それ以外のことは無視してください。
+                
                 おすすめの食事:
                 
                 おすすめのレストラン:
