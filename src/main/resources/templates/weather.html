@@ -19,7 +19,9 @@
         </nav>
     </header>
     <main>
-        <h1>天気情報</h1>
+        <div id="in">
+            <div class="border"><h1>天気情報</h1></div>
+        </div>
         まだできてないよーん＾＾
         <form th:action="@{/display}" method="post">
             <input type="hidden" name="location" th:value="${location}">
@@ -27,5 +29,10 @@
         </form>
     </main>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+	    $('#in').fadeIn(2000);
+	</script>
 </body>
 </html>
