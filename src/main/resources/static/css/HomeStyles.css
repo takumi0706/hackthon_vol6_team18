@@ -2,10 +2,12 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: Arial, sans-serif;
-    background-image: url(../img/istockphoto-1337232523-1024x1024.jpg);
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url('https://www.aflo.com/pages/creative/worldheritage/img/japan/gal/95602546.webp');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,7 +73,6 @@ nav a:hover {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    font-family: 'Times New Roman', Times, serif;
 }
 
 .hero h2 {
@@ -105,6 +106,7 @@ nav a:hover {
     color: white;
     cursor: pointer;
     transition: background 0.3s, transform 0.3s;
+    border-radius: 10px;
 }
 
 .hero button:hover {
@@ -128,6 +130,6 @@ nav a:hover {
 }
 
 /* フェードイン */
-#in,#in2,#in3,#in4,#in5,#in6 {
+#in,#in2,#in3,#in4,#in5,#in6,#in7 {
     display: none;
 }

@@ -1,59 +1,13 @@
-/*body{*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    height: 100%;*/
-/*    font-family: Arial, sans-serif;*/
-/*    background-image: url(../img/istockphoto-1337232523-1024x1024.jpg);*/
-/*    background-size: cover;*/
-/*    background-position: center;*/
-/*}*/
-
-/*.container {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    height: 100%;*/
-/*    color: white;*/
-/*}*/
-
-/*header {*/
-/*    background: rgba(0, 0, 0, 0.5);*/
-/*    padding: 10px 20px;*/
-/*}*/
-
-/*header h1 {*/
-/*    margin: 0;*/
-/*    font-size: 24px;*/
-/*}*/
-
-/*nav ul {*/
-/*    list-style: none;*/
-/*    padding: 0;*/
-/*    margin: 0;*/
-/*    display: flex;*/
-/*    gap: 10px;*/
-/*    justify-content: center;*/
-/*}*/
-
-/*nav a {*/
-/*    color: white;*/
-/*    text-decoration: none;*/
-/*    padding: 5px 10px;*/
-/*    border-radius: 3px;*/
-/*    background: rgba(0, 0, 0, 0.3);*/
-/*}*/
-
-/*nav a:hover {*/
-/*    background: rgba(0, 0, 0, 0.5);*/
-/*}*/
-
 body {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: Arial, sans-serif;
-    background-image: url(../img/istockphoto-1337232523-1024x1024.jpg);
-    background-size: cover;
-    background-position: center;
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url('https://img.freepik.com/free-photo/buffet-table-reception-with-burgers-cold-snacks-meat-salads_627829-11476.jpg?t=st=1717858848~exp=1717862448~hmac=50f16822f1f7f88fb7f61e693e856cea38cb9ca52f46a59a3882c9264f9fe42a&w=996');
+    background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,6 +75,29 @@ main h1 {
     margin-bottom: 20px;
 }
 
+.border {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.border::after {
+    content: '';
+    position: relative;
+    display: block;
+    border-bottom: 4px solid #000;
+    animation: up 2s ease-in-out;
+}
+
+@keyframes up {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+    
+}
+
 main p {
     font-size: 18px;
     line-height: 1.6;
@@ -141,4 +118,8 @@ footer {
     color: white;
     border-radius: 10px;
     margin-top: 20px;
+}
+
+#in {
+    display: none;
 }

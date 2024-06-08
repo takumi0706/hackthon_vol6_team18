@@ -19,10 +19,17 @@
         </nav>
     </header>
     <main>
-        <h1>文化・習慣</h1>
+        <div id="in">
+            <div class="border"> <h1>文化・習慣</h1> </div>
+        </div>
         <p th:text="'選択した場所: ' + ${location}"></p>
         <p th:text="${response}"></p>
     </main>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+	    $('#in').fadeIn(2000);
+	</script>
 </body>
 </html>
