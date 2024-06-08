@@ -26,16 +26,14 @@
             </ul>
         </nav>
     </header>
-    
+
     <main>
         <div class="hero">
             <h2 id="in">旅行先を見つけよう</h2>
             <form th:action="@{/display}" method="post">
-
-                
                 <div id="in2">
                     <label>
-                        <input type="text" placeholder="場所名を入力" name="location">
+                        <input type="text" placeholder="場所名を入力" name="location" th:value="${location}">
                     </label>
                 </div>
 
@@ -72,13 +70,13 @@
 
 <!-- フェードイン -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script>
-	    $('#in').fadeIn(1000);
-        $('#in2').fadeIn(1200);
-        $('#in3').fadeIn(1400);
-        $('#in4').fadeIn(1600);
-        $('#in5').fadeIn(1800);
-        $('#in6').fadeIn(1800);
-	</script>
+<script>
+    $('#in').fadeIn(1000);
+    $('#in2').fadeIn(1200);
+    $('#in3').fadeIn(1400);
+    $('#in4').fadeIn(1600);
+    $('#in5').fadeIn(1800);
+    $('#in6').fadeIn(1800);
+</script>
 </body>
 </html>
