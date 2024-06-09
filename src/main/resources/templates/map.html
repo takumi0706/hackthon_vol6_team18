@@ -7,10 +7,21 @@
 
   <link rel="icon" type="image/png" th:href="@{/img/DALLC2B7E202024-06-082019.png}">
 
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+
   <script th:inline="javascript">
-
     let googleMapsApiKey = /*[[${googleMapsApiKey}]]*/"googleMapsApiKey";
-
   </script>
   <script th:src="@{'https://maps.googleapis.com/maps/api/js?key=' + ${googleMapsApiKey} + '&callback=initMap'}" async defer></script>
   <script th:inline="javascript">
@@ -54,7 +65,6 @@
   </script>
 </head>
 <body>
-<div id="map" style="width: 100%; height: 500px;"></div>
+<div id="map"></div>
 </body>
 </html>
-
