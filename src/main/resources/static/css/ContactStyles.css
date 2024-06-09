@@ -89,9 +89,6 @@ nav a:hover {
     text-decoration: underline;
 }
 
-
-
-
     h2,h3 {
         padding: 1rem 2rem;
         border-left: 4px solid #000;
@@ -99,6 +96,20 @@ nav a:hover {
 
     #in {
     display: none;
+    }
+
+    nav .nav-icon {
+    position: absolute; /* 絶対位置を設定 */
+    left: 110px; /* 左に配置 */
+    top: 5%;
+    
+    transform: translateY(-50%); /* 垂直方向に中央揃え */
+    padding: 10px; /* アイコンに余白を追加 */
+    }
+
+    nav .logo {
+    width: auto; /* 自動調整 */
+    height: 40px; /* 高さを固定して幅を自動調整 */
     }
     
     <!--お問い合わせフォーム-->
