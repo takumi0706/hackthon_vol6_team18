@@ -30,7 +30,7 @@ public class ChatGptService {
         headers.set("Authorization", "Bearer " + apiKey);
 
         ChatGptRequest request = new ChatGptRequest();
-        request.setModel("gpt-3.5-turbo");
+        request.setModel("gpt-4o");
         request.setMessages(Collections.singletonList(new Message("user", prompt)));
         request.setMax_tokens(1000);
 
