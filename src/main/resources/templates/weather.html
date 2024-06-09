@@ -18,7 +18,9 @@
         </nav>
     </header>
     <main>
-        <h1>本日の天気情報</h1>
+        <div id="in">
+            <div class="border"> <h1>本日の天気情報</h1> </div>
+        </div>
         <p>都市: <span th:text="${weatherData.city}">都市名</span></p>
         <p>天気: <span th:text="${weatherData.description}">天気の説明</span>
             <img th:src="${weatherData.iconUrl}" alt="天気アイコン" style="vertical-align: middle; margin-left: 10px;">
