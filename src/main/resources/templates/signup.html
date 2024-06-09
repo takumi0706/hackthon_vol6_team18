@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>ユーザ登録画面</title>
+    <link rel="stylesheet" th:href="@{/css/SignupStyles.css}">
+    <link rel="icon" type="image/png" th:href="@{/img/DALLC2B7E202024-06-082019.png}">
 </head>
 <body>
-<h2>ユーザ登録画面</h2>
-<span th:text="${message}"></span>
-<form th:action="@{/signup}" method="post" th:object="${signupForm}">
-    <div>
-        <label>ログインID</label>
-        <input type="text" th:field="*{loginId}">
+<div class="signup-container">
+    <h2>ユーザ登録画面</h2>
+    <span th:text="${message}"></span>
+    <form th:action="@{/signup}" method="post" th:object="${signupForm}">
+        <div class="input-group">
+            <label>ログインID</label>
+            <input type="text" th:field="*{loginId}">
+            <span th:if="${#fields.hasErrors('loginId')}" th:errors="*{loginId}"></span>
+        </div>
+        <div class="input-group">
+            <label>パスワード</label>
+            <input type="password" th:field="*{password}">
+            <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+        </div>
+        <button type="submit">ユーザ登録</button>
+    </form>
+    <div class="login-link">
+        <p>既にアカウントをお持ちですか？</p>
+        <a th:href="@{/}">ログイン画面</a>
     </div>
-    <span th:if="${#fields.hasErrors('loginId')}" th:errors="*{loginId}"></span>
-    <div>
-        <label>パスワード</label>
-        <input type="password" th:field="*{password}">
-        <input type="submit" value="ユーザ登録">
-    </div>
-    <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
-</form>
-<a th:href="@{/}">ログイン画面</a>
+</div>
 </body>
 </html>

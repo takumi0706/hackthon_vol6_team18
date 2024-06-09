@@ -121,7 +121,7 @@ public class DisplayController {
 
                 for (String[] data : promptData) {
                     String prompt = String.format("""
-                            あなたは%sです。ユーザーの質問に対して、以下の形式で回答してください。
+                            あなたは%sです。ユーザーの質問に対して、以下の形式ですべて回答してください。
                             ユーザーの質問項目以外のことは答えないでください。
                             %s
                             %s
