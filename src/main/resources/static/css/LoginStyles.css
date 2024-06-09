@@ -1,0 +1,98 @@
+/* 共通のリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* bodyのスタイル */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(../img/istockphoto-1337232523-1024x1024.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ログインコンテナのスタイル */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+/* フォームのスタイル */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 見出しのスタイル */
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* インプットグループのスタイル */
+.input-group {
+    margin-bottom: 15px;
+}
+
+/* ラベルのスタイル */
+label {
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* インプットのスタイル */
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* ボタンのスタイル */
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #575757;
+}
+
+/* サインアップリンクのスタイル */
+.signup-link {
+    margin-top: 30px;
+}
+
+.signup-link p {
+    margin-bottom: 10px;
+}
+
+.signup-link a {
+    color: blue;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}

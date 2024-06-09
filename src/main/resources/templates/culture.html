@@ -6,13 +6,19 @@
     <title>Travel Planner</title>
     <link rel="stylesheet" th:href="@{/css/CultureStyles.css}">
 
+    <link rel="icon" type="image/png" th:href="@{/img/DALLC2B7E202024-06-082019.png}">
+
+    <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}"></script>
+    <script th:src="@{https://cdn.jsdelivr.net/npm/marked/marked.min.js}"></script>
+    <script th:src="@{/js/script.js}"></script>
+
 </head>
 <body>
 <div class="container">
     <header>
         <nav>
             <ul>
-                <li><a th:href="@{/}">Home</a></li>
+                <li><a th:href="@{/home}">Home</a></li>
                 <li><a th:href="@{/about}">About</a></li>
                 <li><a th:href="@{/contact}">Contact</a></li>
             </ul>
@@ -23,17 +29,15 @@
             <div class="border"> <h1>文化・習慣</h1> </div>
         </div>
         <p th:text="'選択した場所: ' + ${location}"></p>
-        <p th:text="${response}"></p>
+        <p th:text="その地域での文化"></p>
+        <p id="response1-markdown" th:text="${response1}"></p>
+        <p th:text="気を付けたほうがいいこと"></p>
+        <p id="response2-markdown" th:text="${response2}"></p>
         <form th:action="@{/display}" method="post">
             <input type="hidden" name="location" th:value="${location}">
             <button type="submit">戻る</button>
         </form>
     </main>
 </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script>
-	    $('#in').fadeIn(2000);
-	</script>
 </body>
 </html>

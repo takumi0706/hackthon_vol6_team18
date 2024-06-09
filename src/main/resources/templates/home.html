@@ -19,7 +19,7 @@
     <header>
         <nav>
             <ul>
-                <li><a th:href="@{/}">Home</a></li>
+                <li><a th:href="@{/home}">Home</a></li>
                 <li><a th:href="@{/about}">About</a></li>
                 <li><a th:href="@{/contact}">Contact</a></li>
             </ul>
@@ -38,7 +38,7 @@
 
                 <div id="in3">
                     <label>
-                        <input type="text" placeholder="いつどれくらい行きたい？" name="days">
+                        <input type="text" placeholder="いつどれくらい行きたい？" name="schedule">
                     </label>
                 </div>
 
@@ -72,7 +72,7 @@
 </script>
 
 <!-- フェードイン -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script>
+<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}"></script><script>
 	    $('#in').fadeIn(1000);
         $('#in2').fadeIn(1200);
         $('#in3').fadeIn(1400);

@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Google Maps API Example</title>
+  <title>Google Maps</title>
+
+  <link rel="icon" type="image/png" th:href="@{/img/DALLC2B7E202024-06-082019.png}">
+
   <script th:inline="javascript">
 
     let googleMapsApiKey = /*[[${googleMapsApiKey}]]*/"googleMapsApiKey";
@@ -38,7 +41,7 @@
 
                   const form = document.createElement("form");
                   form.setAttribute("method", "get");
-                  form.setAttribute("action", "/");
+                  form.setAttribute("action", "/home");
                   form.appendChild(input);
                   document.body.appendChild(form);
                   form.submit();

@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Planner</title>
+    <title>Travel Tango</title>
     <link rel="stylesheet" th:href="@{/css/WeatherStyles.css}">
+
+    <link rel="icon" type="image/png" th:href="@{/img/DALLC2B7E202024-06-082019.png}">
 
 </head>
 <body>
@@ -19,10 +21,9 @@
         </nav>
     </header>
     <main>
-        <div id="in">
-            <div class="border"><h1>天気情報</h1></div>
-        </div>
-        まだできてないよーん＾＾
+        <h1>本日の天気情報</h1>
+        <p th:text="${weatherData}">天気情報が表示される</p>
+
         <form th:action="@{/display}" method="post">
             <input type="hidden" name="location" th:value="${location}">
             <button type="submit">戻る</button>
@@ -31,8 +32,8 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script>
-	    $('#in').fadeIn(2000);
-	</script>
+<script>
+    $('#in').fadeIn(2000);
+</script>
 </body>
 </html>

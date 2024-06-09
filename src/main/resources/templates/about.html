@@ -1,23 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="jp">
 <head>
     <meta charset="UTF-8">
     <title>About</title>
     <link rel="stylesheet" th:href="@{/css/AboutStyles.css}">
+
+    <link rel="icon" type="image/png" th:href="@{/img/DALLC2B7E202024-06-082019.png}">
+
 </head>
 <body>
 <div class="container">
     <header>
         <nav>
             <ul>
-                <li><a th:href="@{/}">Home</a></li>
+                <li><a th:href="@{/home}">Home</a></li>
                 <li><a th:href="@{/about}">About</a></li>
                 <li><a th:href="@{/contact}">Contact</a></li>
             </ul>
         </nav>
     </header>
     <main>
-
+        <div class="description-container">
+            <h1>TravelTango</h1>
+            <h3>旅行の計画大丈夫？</h3>
+            <p>皆さんは、こういった経験はありませんか？</p>
+            <p>「どこの観光地に行けばいいのだろう？」<br>「当日の天気どうなっているんだろう？」</p>
+            <p>これらの悩みを解決するのが、この"TravelTango"です。<br>このアプリは旅行の手助けの一助となります。</p>
+        </div>
     </main>
 </div>
 </body>
