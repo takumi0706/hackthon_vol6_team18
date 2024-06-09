@@ -1,28 +1,68 @@
-body{
+/* 共通のリセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* bodyのスタイル */
+body {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: Arial, sans-serif;
-    background-image: url(../img/istockphoto-1337232523-1024x1024.jpg);
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url('../img/istockphoto-1337232523-1024x1024.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333;
 }
 
+/* コンテナのスタイル */
 .container {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    color: white;
+    width: 80%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    color: #333;
 }
 
+/* ヘッダーのスタイル */
 header {
     background: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
+    padding: 20px; /* 余白を追加 */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    text-align: center; /* ヘッダー内のテキストを中央揃えにする */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* 子要素の絶対位置を制御 */
 }
 
 header h1 {
     margin: 0;
     font-size: 24px;
+    color: #fff;
+}
+
+/* ナビゲーションのスタイル */
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center; /* ボタンを中央揃えにする */
+    position: relative; /* 相対位置を設定して子要素を制御 */
 }
 
 nav ul {
@@ -30,8 +70,21 @@ nav ul {
     padding: 0;
     margin: 0;
     display: flex;
+    align-items: center;
     gap: 10px;
-    justify-content: center;
+}
+
+nav .nav-icon {
+    position: absolute; /* 絶対位置を設定 */
+    left: 20px; /* 左に配置 */
+    top: 50%;
+    transform: translateY(-50%); /* 垂直方向に中央揃え */
+    padding: 10px; /* アイコンに余白を追加 */
+}
+
+nav .logo {
+    width: auto; /* 自動調整 */
+    height: 40px; /* 高さを固定して幅を自動調整 */
 }
 
 nav a {
@@ -40,8 +93,55 @@ nav a {
     padding: 5px 10px;
     border-radius: 3px;
     background: rgba(0, 0, 0, 0.3);
+    margin: 0 5px; /* ボタンの左右に余白を追加 */
 }
 
 nav a:hover {
     background: rgba(0, 0, 0, 0.5);
+}
+
+/* メディアクエリでlogoのサイズを調整 */
+@media (max-width: 600px) {
+    nav .logo {
+        height: 30px; /* 小さな画面用のアイコンサイズ */
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+    nav .logo {
+        height: 35px; /* 中くらいの画面用のアイコンサイズ */
+    }
+}
+
+@media (min-width: 1201px) {
+    nav .logo {
+        height: 40px; /* 大きな画面用のアイコンサイズ */
+    }
+}
+
+/* 説明コンテナのスタイル */
+.description-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* 見出しのスタイル */
+.description-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.description-container h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+/* パラグラフのスタイル */
+.description-container p {
+    margin-bottom: 15px;
+    font-size: 16px;
 }
