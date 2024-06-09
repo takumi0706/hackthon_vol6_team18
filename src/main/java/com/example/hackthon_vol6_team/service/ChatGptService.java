@@ -44,4 +44,17 @@ public class ChatGptService {
             throw new RuntimeException("Failed to get response from ChatGPT API");
         }
     }
+
+    public String getCorrectCityName(String userInput) {
+        String prompt = "ユーザーが入力した都市名 \"" + userInput + "\" を正確にAPIが認識できる形式での都市名に変換してください。" +
+                "該当する都市名がない場合は最も距離的に近い正確にAPIが認識できる形式での都市名を表示してください。" +
+                "返答は正確にAPIが認識できる形式に変換した都市名の単語のみを英語で出力してください。" +
+                "\"" + userInput + "\" に国が入力されている場合は、その国の首都を正確にAPIが認識できる形式での都市名に変換してください。";
+        return getChatGptResponse(prompt);
+    }
+
+    public String translateWeatherDescription(String description) {
+        String prompt = String.format("次の天気の説明を日本語に翻訳してください: '%s'", description);
+        return getChatGptResponse(prompt);
+    }
 }
