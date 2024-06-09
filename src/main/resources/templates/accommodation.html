@@ -28,6 +28,7 @@
         </div>
 
         <p th:text="'選択した場所: ' + ${location}"></p>
+        <p th:text="おすすめの宿泊施設"></p>
         <p id="response1-markdown" th:text="${response}"></p>
         <form th:action="@{/display}" method="post">
             <input type="hidden" name="location" th:value="${location}">

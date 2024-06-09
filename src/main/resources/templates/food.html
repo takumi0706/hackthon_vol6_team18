@@ -29,7 +29,9 @@
 
         <p th:text="'選択した場所: ' + ${location}"></p>
         <p th:text="'予算: ' + ${food_budget}"></p>
+        <p th:text="おすすめの食事"></p>
         <p id="response1-markdown" th:text="${response1}"></p>
+        <p th:text="おすすめのレストラン"></p>
         <p id="response2-markdown" th:text="${response2}"></p>
 
         <form th:action="@{/display}" method="post">
