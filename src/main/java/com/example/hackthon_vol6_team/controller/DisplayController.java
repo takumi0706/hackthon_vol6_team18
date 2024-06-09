@@ -1,5 +1,7 @@
 package com.example.hackthon_vol6_team.controller;
 
+import com.example.hackthon_vol6_team.form.FavoriteResistForm;
+import com.example.hackthon_vol6_team.service.ResistUserFavoriteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.env.PropertyResolver;
@@ -22,6 +24,8 @@ public class DisplayController {
     @Autowired
     @Qualifier("propertyResolver")
     private PropertyResolver propertyResolver;
+    @Autowired
+    private ResistUserFavoriteService resistUserFavoriteService;
 
     @ModelAttribute("prompts")
     public Map<String, String> prompts() {
@@ -199,6 +203,25 @@ public class DisplayController {
 
         return "culture";
     }
+
+    @PostMapping("/display/resist")
+    public String resist(@RequestParam(name = "location") String location,
+                         @RequestParam(name = "another_budget", required = false) String another_budget,
+                         @RequestParam(name = "food_budget", required = false) String food_budget,
+                         Model model, @ModelAttribute("prompts") Map<String, String> prompts) {
+
+        if(another_budget == null || another_budget.trim().isEmpty()) {
+            another_budget = "未定";
+        }
+        if(food_budget == null || food_budget.trim().isEmpty()) {
+            food_budget = "未定";
+        }
+
+        var userFavorite = resistUserFavoriteService.resistUserFavorite(location, another_budget,food_budget,
+                model, prompts);
+        return "resist";
+    }
+
 
 //    @PostMapping("/display/weather")
 //    public String weather(Model model) {

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
  * @author fuj1o
  *
  */
+@Repository
 public interface UserInfoRepository extends JpaRepository<UserInfo,String> {
 
 }

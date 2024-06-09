@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>お気に入り登録完了</title>
+    <link rel="stylesheet" th:href="@{/css/LoginStyles.css}">
+
+    <link rel="icon" type="image/png" th:href="@{/img/DALLC2B7E202024-06-082019.png}">
+
+</head>
+<body>
+<div class="login-container">
+    <h2>お気に入り登録を完了しました</h2>
+    <form th:action="@{/display}" method="post">
+        <input type="hidden" name="location" th:value="${location}">
+        <button type="submit">戻る</button>
+    </form>
+</div>
+</body>
+</html>

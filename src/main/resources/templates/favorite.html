@@ -3,16 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Planing Now!</title>
-    <link rel="stylesheet" th:href="@{/css/DisplayStyles.css}">
-
-    <link rel="icon" type="image/png" th:href="@{/img/DALLC2B7E202024-06-082019.png}">
-
+    <link rel="stylesheet" th:href="@{/css/FavoriteStyles.css}">
 </head>
 <body>
 <header>
     <nav>
         <ul>
-            <li><a th:href="@{/home}">Home</a></li>
+            <li><a th:href="@{/}">Home</a></li>
             <li><a th:href="@{/about}">About</a></li>
             <li><a th:href="@{/contact}">Contact</a></li>
             <li><a th:href="@{/favolist}">favolist</a></li>
@@ -20,55 +17,48 @@
     </nav>
 </header>
 <main>
-    <h1>旅行プランナー</h1>
+    <h1>あなたのお気に入り</h1>
     <p th:text="'選択した場所: ' + ${location}"></p>
     <nav>
         <ul>
             <li>
-                <form th:action="@{/display/food}" method="post">
+                <form th:action="@{/favorite/food}" method="post">
                     <input type="hidden" name="location" th:value="${location}" />
                     <input type="hidden" name="food_budget" th:value="${food_budget}" />
                     <button type="submit">食事</button>
                 </form>
             </li>
             <li>
-                <form th:action="@{/display/accommodation}" method="post">
+                <form th:action="@{/favorite/accommodation}" method="post">
                     <input type="hidden" name="location" th:value="${location}" />
                     <input type="hidden" name="another_budget" th:value="${another_budget}" />
                     <button type="submit">宿泊</button>
                 </form>
             </li>
             <li>
-                <form th:action="@{/display/sightseeing}" method="post">
+                <form th:action="@{/favorite/sightseeing}" method="post">
                     <input type="hidden" name="location" th:value="${location}" />
                     <input type="hidden" name="another_budget" th:value="${another_budget}" />
                     <button type="submit">観光スポット</button>
                 </form>
             </li>
             <li>
-                <form th:action="@{/display/schedule}" method="post">
+                <form th:action="@{/favorite/schedule}" method="post">
                     <input type="hidden" name="location" th:value="${location}" />
                     <input type="hidden" name="days" th:value="${days}" />
                     <button type="submit">日程調整</button>
                 </form>
             </li>
             <li>
-                <form th:action="@{/display/culture}" method="post">
+                <form th:action="@{/favorite/aculture}" method="post">
                     <input type="hidden" name="location" th:value="${location}" />
                     <button type="submit">文化・習慣</button>
                 </form>
             </li>
             <li>
-                <form th:action="@{/display/weather}" method="post">
+                <form th:action="@{/favorite/weather}" method="post">
                     <input type="hidden" name="location" th:value="${location}" />
                     <button type="submit">天気情報</button>
-                </form>
-            </li>
-
-            <li>
-                <form th:action="@{/display/resist}" method="post">
-                    <input type="hidden" name="location" th:value="${location}" />
-                    <button type="submit">お気に入りに登録</button>
                 </form>
             </li>
 

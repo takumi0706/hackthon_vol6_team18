@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>お気に入り登録した旅行先</title>
+    <link rel="stylesheet" th:href="@{/css/LoginStyles.css}">
+
+    <link rel="icon" type="image/png" th:href="@{/img/DALLC2B7E202024-06-082019.png}">
+
+</head>
+<body>
+<div class="login-container">
+    <h2>お気に入り登録した旅行先</h2>
+    <form th:action="@{/favorite}" method="post" th:object="${locationForm}">
+        <div class="input-group">
+            <label>旅行先</label>
+            <input type="text" th:field="*{location}">
+        </div>
+        <button type="submit">検索</button>
+    </form>
+</div>
+</body>
+</html>

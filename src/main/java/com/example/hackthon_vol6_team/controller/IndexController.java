@@ -1,5 +1,6 @@
 package com.example.hackthon_vol6_team.controller;
 
+import com.example.hackthon_vol6_team.form.LocationForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -17,15 +18,6 @@ public class IndexController {
         return new HashMap<>();
     }
 
-    @PostMapping("/home")
-    public String HomePost(@RequestParam(value = "location", required = false) String location, @ModelAttribute("prompts") Map<String, String> prompts, Model model) {
-        if (location != null) {
-            model.addAttribute("location", location);
-        }
-        prompts.clear();
-        return "home";
-    }
-
     @GetMapping("/home")
     public String HomeGet(@RequestParam(value = "location", required = false) String location, @ModelAttribute("prompts") Map<String, String> prompts, Model model) {
         if (location != null) {
@@ -35,7 +27,7 @@ public class IndexController {
         return "home";
     }
 
-        @GetMapping("/about")
+    @GetMapping("/about")
     public String about() {
 
         return "about";
@@ -45,5 +37,11 @@ public class IndexController {
     public String contact() {
 
         return "contact";
+    }
+
+    @GetMapping("/favolist")
+    public String favolist(Model model) {
+        model.addAttribute("locationForm", new LocationForm());
+        return "favolist";
     }
 }
