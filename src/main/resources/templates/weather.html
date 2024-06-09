@@ -10,6 +10,9 @@
 
 </head>
 <body>
+    <style>
+        
+    </style>
 <div class="container">
     <header>
         <nav>
@@ -21,7 +24,9 @@
         </nav>
     </header>
     <main>
-        <h1>本日の天気情報</h1>
+        <div id="in">
+        <div class="border"><h1>本日の天気情報</h1></div>
+        </div>
         <p th:text="${weatherData}">天気情報が表示される</p>
 
         <form th:action="@{/display}" method="post">
