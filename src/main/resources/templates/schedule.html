@@ -25,7 +25,9 @@
         </nav>
     </header>
     <main>
-        <h1>日程提案</h1>
+        <div id="in">
+        <div class="border"> <h1>日程提案</h1> </div>
+        </div>
         <p th:text="'選択した場所: ' + ${location}"></p>
         <p th:text="旅行スケジュール"></p>
         <p id="response1-markdown" th:text="${response}"></p>
