@@ -374,9 +374,9 @@ public class DisplayController {
         return "culture";
     }
 
-    @PostMapping("/display/weather")
-    public String weather(Model model) {
-        // TODO: 天気APIをここに追加する
-        return "weather";
-    }
+//    @PostMapping("/display/weather")
+//    public String weather(Model model) {
+//        // TODO: 天気APIをここに追加する
+//        return "weather";
+//    }
 }
