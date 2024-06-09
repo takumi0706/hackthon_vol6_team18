@@ -8,7 +8,7 @@
 /* 背景画像を設定 */
 body {
     font-family: Arial, sans-serif;
-    background-image: url(../img/istockphoto-1337232523-1024x1024.jpg); /* 画像ファイルのパス */
+    background-image: url('https://img.freepik.com/free-photo/fuji-mountain-kawaguchiko-lake-morning-autumn-seasons-fuji-mountain-yamanachi-japan_335224-102.jpg?t=st=1717913272~exp=1717916872~hmac=76d5fa66f799e84c4eea5197344dbccbe4358452a8840ca00b15f3bf60f640d9&w=996'); /* 画像ファイルのパス */
     background-size: cover; /* 画像を全体にフィットさせる */
     background-position: center; /* 画像を中央に配置 */
     background-repeat: no-repeat; /* 画像を繰り返さない */
