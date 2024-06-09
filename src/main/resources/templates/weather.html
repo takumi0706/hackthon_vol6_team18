@@ -22,7 +22,34 @@
         <div id="in">
             <div class="border"><h1>天気情報</h1></div>
         </div>
-        まだできてないよーん＾＾
+        まだできてないよーん＾＾<!DOCTYPE html>
+        <html xmlns:th="http://www.thymeleaf.org" lang="ja">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Travel Planner</title>
+            <link rel="stylesheet" th:href="@{/css/AccommodationStyles.css}">
+
+        </head>
+        <body>
+        <div class="container">
+            <header>
+                <nav>
+                    <ul>
+                        <li><a th:href="@{/}">Home</a></li>
+                        <li><a th:href="@{/about    }">About</a></li>
+                        <li><a th:href="@{/contact}">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <h1>天気情報</h1>
+                <p th:text="${weatherData}">天気情報が表示される</p>
+
+            </main>
+        </div>
+        </body>
+        </html>
         <form th:action="@{/display}" method="post">
             <input type="hidden" name="location" th:value="${location}">
             <button type="submit">戻る</button>
