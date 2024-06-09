@@ -1,24 +1,33 @@
-
 body {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: Arial, sans-serif;
-    background-image: url(../img/istockphoto-1337232523-1024x1024.jpg);
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url('https://www.aflo.com/pages/creative/worldheritage/img/japan/gal/95602546.webp');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    color: white;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    color: #333;
 }
 
 header {
     background: rgba(0, 0, 0, 0.5);
     padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 header h1 {
@@ -50,8 +59,9 @@ nav a:hover {
 main {
     padding: 2em;
     background-color: rgba(255, 255, 255, 0.8);
-    margin: 2em auto;
-    max-width: 800px;
+    margin: 2em ;
+    margin-left: 10%;
+    margin-right: 10%;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -83,19 +93,43 @@ main nav ul li form {
 }
 
 main nav ul li form button {
-    width: 100%;
+    font-family: 'Times New Roman', Times, serif;
+    width: 80%;
     padding: 1em;
     background-color: #4CAF50;
+    border: none;
+    position: relative;
     color: #fff;
     text-align: center;
     text-decoration: none;
-    border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     transition: background-color 0.3s, transform 0.3s;
     cursor: pointer;
 }
 
 main nav ul li form button:hover {
-    background-color: #388E3C;
+    background-color: #fff;
+    color: #4CAF50;
     transform: scale(1.05);
+}
+
+main nav ul li form button:before, button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #4CAF50;
+    transition: 400ms ease all;
+}
+main nav ul li form button:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+main nav ul li form button:hover:before, main nav ul li form button:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
 }

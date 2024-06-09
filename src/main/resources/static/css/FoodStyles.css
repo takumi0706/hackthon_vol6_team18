@@ -75,6 +75,8 @@ main h1 {
     margin-bottom: 20px;
 }
 
+<!--borderAninmation-->
+
 .border {
     overflow: hidden;
     margin-bottom: 20px;
@@ -97,6 +99,8 @@ main h1 {
     }
     
 }
+<!--borderAnimation End-->
+
 
 main p {
     font-size: 18px;
