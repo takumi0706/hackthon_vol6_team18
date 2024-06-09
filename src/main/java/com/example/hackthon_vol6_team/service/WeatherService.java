@@ -1,5 +1,6 @@
 package com.example.hackthon_vol6_team.service;
 
+import com.example.hackthon_vol6_team.dto.WeatherData;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class WeatherService {
     private String apiUrl;
 
 
-    public String getWeather(String location) {
+    public WeatherData getWeather(String location) {
         String url = String.format(apiUrl, location, apiKey);
         RestTemplate restTemplate = new RestTemplate();
         String response;
@@ -44,7 +45,6 @@ public class WeatherService {
                 response = restTemplate.getForObject(url, String.class);
                 return parseWeatherResponse(response);
             } catch (HttpClientErrorException.NotFound ex) {
-                // 2回目の試行でエラーが発生した場合、再度都市名を取得して試行
                 correctCityName = chatGptService.getCorrectCityName(correctCityName);
                 logger.info("Second Corrected City Name: {}", correctCityName);
 
@@ -53,28 +53,29 @@ public class WeatherService {
                     response = restTemplate.getForObject(url, String.class);
                     return parseWeatherResponse(response);
                 } catch (HttpClientErrorException.NotFound ex2) {
-                    return "指定された都市が見つかりません。正しい都市名を入力してください。";
+                    return new WeatherData("指定された都市が見つかりません。正しい都市名を入力してください。", null, null, null);
                 } catch (Exception ex2) {
                     ex2.printStackTrace();
-                    return "天気データの取得に失敗しました。再度確認してください。";
+                    return new WeatherData("天気データの取得に失敗しました。再度確認してください。", null, null, null);
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();
-                return "天気データの取得に失敗しました。再度確認してください。";
+                return new WeatherData("天気データの取得に失敗しました。再度確認してください。", null, null, null);
             }
         } catch (Exception e) {
             e.printStackTrace();
-            return "天気データの取得に失敗しました。再度確認してください。";
+            return new WeatherData("天気データの取得に失敗しました。再度確認してください。", null, null, null);
         }
     }
 
-    private String parseWeatherResponse(String response) {
+    private WeatherData parseWeatherResponse(String response) {
         ObjectMapper mapper = new ObjectMapper();
         try {
             JsonNode root = mapper.readTree(response);
             String weatherDescription = root.path("weather").get(0).path("description").asText();
             String temperature = root.path("main").path("temp").asText();
             String cityName = root.path("name").asText();
+            String iconCode = root.path("weather").get(0).path("icon").asText();
 
             double kelvinTemp = Double.parseDouble(temperature);
             double celsiusTemp = kelvinTemp - 273.15;
@@ -83,10 +84,12 @@ public class WeatherService {
 
             String translatedDescription = translateWeatherDescription(weatherDescription);
 
-            return String.format("都市: %s, 天気: %s, 気温: %s℃", cityName, translatedDescription, formattedTemp);
+            String iconUrl = "http://openweathermap.org/img/wn/" + iconCode + "@2x.png";
+
+            return new WeatherData(cityName, translatedDescription, formattedTemp, iconUrl);
         } catch (Exception e) {
             e.printStackTrace();
-            return "天気データの解析中にエラーが発生しました";
+            return new WeatherData("天気データの解析中にエラーが発生しました", null, null, null);
         }
     }
 

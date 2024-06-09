@@ -19,7 +19,11 @@
     </header>
     <main>
         <h1>本日の天気情報</h1>
-        <p th:text="${weatherData}">天気情報が表示される</p>
+        <p>都市: <span th:text="${weatherData.city}">都市名</span></p>
+        <p>天気: <span th:text="${weatherData.description}">天気の説明</span>
+            <img th:src="${weatherData.iconUrl}" alt="天気アイコン" style="vertical-align: middle; margin-left: 10px;">
+        </p>
+        <p>気温: <span th:text="${weatherData.temperature}">気温</span>℃</p>
 
         <form th:action="@{/display}" method="post">
             <input type="hidden" name="location" th:value="${location}">
