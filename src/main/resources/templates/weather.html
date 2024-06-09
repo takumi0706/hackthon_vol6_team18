@@ -10,11 +10,14 @@
 
 </head>
 <body>
+    <style>
+        
+    </style>
 <div class="container">
     <header>
         <nav>
             <ul>
-                <li><a th:href="@{/home}">Home</a></li>
+                <li><a th:href="@{/}">Home</a></li>
                 <li><a th:href="@{/about}">About</a></li>
                 <li><a th:href="@{/contact}">Contact</a></li>
             </ul>
@@ -22,36 +25,16 @@
     </header>
     <main>
         <div id="in">
-            <div class="border"><h1>天気情報</h1></div>
-        </div>
-        まだできてないよーん＾＾<!DOCTYPE html>
-        <html xmlns:th="http://www.thymeleaf.org" lang="ja">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Travel Planner</title>
-            <link rel="stylesheet" th:href="@{/css/AccommodationStyles.css}">
 
-        </head>
-        <body>
-        <div class="container">
-            <header>
-                <nav>
-                    <ul>
-                        <li><a th:href="@{/}">Home</a></li>
-                        <li><a th:href="@{/about    }">About</a></li>
-                        <li><a th:href="@{/contact}">Contact</a></li>
-                    </ul>
-                </nav>
-            </header>
-            <main>
-                <h1>天気情報</h1>
-                <p th:text="${weatherData}">天気情報が表示される</p>
-
-            </main>
+            <div class="border"> <h1>本日の天気情報</h1> </div>
         </div>
-        </body>
-        </html>
+        <p>都市: <span th:text="${weatherData.city}">都市名</span></p>
+        <p>天気: <span th:text="${weatherData.description}">天気の説明</span>
+            <img th:src="${weatherData.iconUrl}" alt="天気アイコン" style="vertical-align: middle; margin-left: 10px;">
+        </p>
+        <p>気温: <span th:text="${weatherData.temperature}">気温</span>℃</p>
+
+
         <form th:action="@{/display}" method="post">
             <input type="hidden" name="location" th:value="${location}">
             <button type="submit">戻る</button>
@@ -60,8 +43,8 @@
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script>
-	    $('#in').fadeIn(2000);
-	</script>
+<script>
+    $('#in').fadeIn(2000);
+</script>
 </body>
 </html>

@@ -8,11 +8,8 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #333;
+    
+    
 }
 
 .container {
@@ -31,8 +28,11 @@ header {
     background: rgba(0, 0, 0, 0.5);
     padding: 1px 20px;
     border-radius: 10px;
-    margin-bottom: 20px;
+
     margin-top: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+
 }
 
 header h1 {
@@ -69,8 +69,11 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
+    padding: 2em;
     background: rgba(255, 255, 255, 0.8);
+    margin: 2em;
+    margin-left: 10%;
+    margin-right: 10%;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
