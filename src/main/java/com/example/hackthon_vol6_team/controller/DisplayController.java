@@ -225,22 +225,82 @@ public class DisplayController {
         } else {
             if (prompts.isEmpty()) {
                 String[][] promptData = {
-                        {"foodItem", "食事プランナーアシスタント", "おすすめの食事:", food_budget},
-                        {"foodRestaurant", "食事プランナーアシスタント", "おすすめのレストラン:", food_budget},
-                        {"sightseeingPlace", "観光地プランナーアシスタント", "おすすめの観光地:", ""},
-                        {"sightseeingBuild", "観光地プランナーアシスタント", "おすすめの観光施設:", ""},
-                        {"culture", "旅行プランナーアシスタント", "その地域での文化:", ""},
-                        {"care", "旅行プランナーアシスタント", "気を付けたほうがいいこと:", ""},
-                        {"accommodation", "宿泊プランナーアシスタント", "おすすめの宿泊施設:", another_budget},
-                        {"schedule", "旅行プランナーアシスタント", "旅行のスケジュール:", schedule}
+                        {"foodItem",
+                        "食事プランナーアシスタント",
+                        "おすすめの食事",
+                        """
+                        ### 料理の名前 \n
+                        特徴(コロンつけずに下に箇条書きで出力）
+                        """,
+                        food_budget},
+
+                        {"foodRestaurant",
+                        "食事プランナーアシスタント",
+                        "おすすめのレストラン",
+                        """
+                        ### お店の名前 \n
+                        住所:お店の住所(お店のgoogle mapのURL) \n
+                        特徴(コロンつけずに下に箇条書きで出力）
+                        """,
+                        food_budget},
+
+                        {"sightseeingPlace",
+                        "観光地プランナーアシスタント",
+                        "おすすめの観光地",
+                        """
+                        ### 観光地の名前 \n
+                        住所:観光地の住所(観光地のgoogle mapのURL) \n
+                        特徴(コロンつけずに下に箇条書きで出力）
+                        """,
+                        ""},
+
+                        {"sightseeingBuild",
+                        "観光地プランナーアシスタント",
+                        "おすすめの観光施設",
+                        """
+                        ### 観光施設の名前 \n
+                        住所:観光施設の住所(観光施設のgoogle mapのURL) \n
+                        特徴(コロンつけずに下に箇条書きで出力）
+                        """,
+                        ""},
+
+                        {"culture",
+                        "旅行プランナーアシスタント",
+                        "その地域での文化",
+                        "",
+                        ""},
+
+                        {"care",
+                        "旅行プランナーアシスタント",
+                        "気を付けたほうがいいこと",
+                        "",
+                        ""},
+
+                        {"accommodation",
+                        "宿泊プランナーアシスタント",
+                        "おすすめの宿泊施設",
+                        """
+                        ### 宿泊施設の名前 \n
+                        住所:宿泊施設の住所(宿泊施設のgoogle mapのURL) \n
+                        特徴
+                        """,
+                        another_budget},
+
+                        {"schedule",
+                        "旅行プランナーアシスタント",
+                        "旅行のスケジュール",
+                        "",
+                        schedule}
                 };
 
                 for (String[] data : promptData) {
                     String prompt = String.format("""
                             あなたは%sです。ユーザーの質問に対して、以下の形式で回答してください。
+                            それ以外のことは答えないでください。
+                            %s
                             %s
                             %sの付近について。%s
-                            """, data[1], data[2], location, data[3]);
+                            """, data[1], data[2], data[3],location, data[4]);
                     prompts.put(data[0], chatGptService.getChatGptResponse(prompt));
                 }
             }
@@ -253,6 +313,10 @@ public class DisplayController {
     public String food(@RequestParam(name = "location") String location,
                        @RequestParam(name = "food_budget", required = false) String food_budget,
                        Model model, @ModelAttribute("prompts") Map<String, String> prompts) {
+
+        if(food_budget == null || food_budget.trim().isEmpty()) {
+            food_budget = "未定";
+        }
 
         model.addAttribute("location", location);
         model.addAttribute("food_budget", food_budget);
@@ -276,6 +340,10 @@ public class DisplayController {
     public String sightseeing(@RequestParam(name = "location") String location,
                               @RequestParam(name = "another_budget", required = false) String another_budget,
                               Model model, @ModelAttribute("prompts") Map<String, String> prompts) {
+
+        if(another_budget == null || another_budget.trim().isEmpty()) {
+            another_budget = "未定";
+        }
 
         model.addAttribute("location", location);
         model.addAttribute("another_budget", another_budget);

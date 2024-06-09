@@ -6,6 +6,10 @@
     <title>Travel Planner</title>
     <link rel="stylesheet" th:href="@{/css/AccommodationStyles.css}">
 
+    <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}"></script>
+    <script th:src="@{https://cdn.jsdelivr.net/npm/marked/marked.min.js}"></script>
+    <script th:src="@{/js/script.js}"></script>
+
 </head>
 <body>
 <div class="container">
@@ -21,7 +25,7 @@
     <main>
         <h1>日程調整</h1>
         <p th:text="'選択した場所: ' + ${location}"></p>
-        <p th:text="${response}"></p>
+        <p id="response1-markdown" th:text="${response}"></p>
         <form th:action="@{/display}" method="post">
             <input type="hidden" name="location" th:value="${location}">
             <button type="submit">戻る</button>
