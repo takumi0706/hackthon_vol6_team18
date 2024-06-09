@@ -23,8 +23,9 @@
         </nav>
     </header>
     <main>
-        <h1>日程調整</h1>
+        <h1>日程提案</h1>
         <p th:text="'選択した場所: ' + ${location}"></p>
+        <p th:text="旅行スケジュール"></p>
         <p id="response1-markdown" th:text="${response}"></p>
         <form th:action="@{/display}" method="post">
             <input type="hidden" name="location" th:value="${location}">

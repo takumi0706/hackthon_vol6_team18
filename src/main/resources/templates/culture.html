@@ -27,7 +27,9 @@
             <div class="border"> <h1>文化・習慣</h1> </div>
         </div>
         <p th:text="'選択した場所: ' + ${location}"></p>
+        <p th:text="その地域での文化"></p>
         <p id="response1-markdown" th:text="${response1}"></p>
+        <p th:text="気を付けたほうがいいこと"></p>
         <p id="response2-markdown" th:text="${response2}"></p>
         <form th:action="@{/display}" method="post">
             <input type="hidden" name="location" th:value="${location}">
